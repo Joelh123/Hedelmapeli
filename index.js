@@ -9,7 +9,7 @@ let locked = "url(images/locked.png)"
 
 let currentBet = 1
 
-let totalMoney = 15
+let totalMoney = 100
 document.getElementById("total-money").innerHTML = totalMoney
 
 let lockedAnyLastRound = true
@@ -187,6 +187,8 @@ function play() {
 function calculateWinnings(slot1, slot2, slot3, slot4) {
     // 0 = apple, 1 = pear, 2 = cherry, 3 = watermelon, 4 = 7
 
+    let voitto = 0
+
     const slots = [slot1, slot2, slot3, slot4]
     const counts = {};
 
@@ -195,29 +197,44 @@ function calculateWinnings(slot1, slot2, slot3, slot4) {
     }
 
     if (counts[0] == 4) {
-        totalMoney += currentBet * 6
+        voitto += currentBet * 6
+        document.getElementById("winnings").innerHTML = `Voitit ${voitto}€ !`
+        totalMoney += voitto
     }
     
-    if (counts[1] == 4) {
-        totalMoney += currentBet * 4
+    else if (counts[1] == 4) {
+        voitto += currentBet * 4
+        document.getElementById("winnings").innerHTML = `Voitit ${voitto}€ !`
+        totalMoney += voitto
     }
 
-    if (counts[2] == 4) {
-        totalMoney += currentBet * 3
+    else if (counts[2] == 4) {
+        voitto += currentBet * 3
+        document.getElementById("winnings").innerHTML = `Voitit ${voitto}€ !`
+        totalMoney += voitto
     }
 
-    if (counts[3] == 4) {
-        totalMoney += currentBet * 5
+    else if (counts[3] == 4) {
+        voitto += currentBet * 5
+        document.getElementById("winnings").innerHTML = `Voitit ${voitto}€ !`
+        totalMoney += voitto
     }
 
-    if (counts[4] == 4) {
-        totalMoney += currentBet * 10
+    else if (counts[4] == 4) {
+        voitto += currentBet * 10
+        document.getElementById("winnings").innerHTML = `Voitit ${voitto}€ !`
+        totalMoney += voitto
     }
 
     else if (counts[4] == 3) {
-        totalMoney += currentBet * 5
+        voitto += currentBet * 5
+        document.getElementById("winnings").innerHTML = `Voitit ${voitto}€ !`
+        totalMoney += voitto
     }
 
+    else {
+        document.getElementById("winnings").innerHTML = ""
+    }
 }
 
 function displayMoney() {

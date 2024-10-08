@@ -521,3 +521,14 @@
 .seven-x4-combo-text {
     font-size: 175%;
 }
+
+.winnings-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 175%;
+    color: rgb(118, 255, 118);
+    text-shadow: 0 0 5px #cecece, 0 0 15px #cecece, 0 0 20px #cecece, 0 0 40px #cecece, 0 0 60px #cecece, 0 0 10px #cecece, 0 0 98px #cecece;
+}
